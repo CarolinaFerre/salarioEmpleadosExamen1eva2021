@@ -1,0 +1,56 @@
+package examenprimeraeva2021;
+import java.util.Scanner;
+
+
+public class examen {
+	static Scanner sc=new Scanner(System.in);
+  
+  //variables estáticas de ejercicio 3
+	
+	static int contadorejercicio3;
+	static int salariosuperior;
+	static int salariomedio;
+	static int salarioinferior;
+	static int porcentajesuperior;
+	static int porcentajeinferior;
+	static int porcentajemedio;
+  
+  public static void salariosEmpleados(int salariosuperior,int salariomedio,int salarioinferior,int total) {
+			porcentajesuperior=salariosuperior*100/total;
+			porcentajemedio=salariomedio*100/total;
+			porcentajeinferior=salarioinferior*100/total;
+			
+			System.out.println("Cantidad de empleados con salario superior a 3000 euros= "+salariosuperior+" empleados");
+			System.out.println("Cantidad de empleados con salario entre 1000 y 3000 euros= "+salariomedio+" empleados");
+			System.out.println("Cantidad de empleados con salario inferior a 1000 euros= "+salarioinferior+" empleados");
+			System.out.println("************************************");
+			System.out.println("Porcentaje de empleados con salario superior a 3000 euros= "+porcentajesuperior+" %");
+			System.out.println("Porcentaje de empleados con salario entre 1000 y 3000 euros= "+porcentajemedio+" %");
+			System.out.println("Porcentaje de empleados con salario inferior a 1000 euros= "+porcentajeinferior+" %");
+	}
+	
+	
+	public static void main(String[] args) {
+  
+  System.out.println("***********EJERCICIO 3************");
+		
+		System.out.println("Por favor, introduzca el salario de los 20 empleados");
+		int salario = 0;
+		int total=20;
+		while(contadorejercicio3!=total) {
+			salario=sc.nextInt();
+
+			if(salario>3000) {
+				salariosuperior++;
+			}else if((salario>=1000)&(salario<=3000)) {
+				salariomedio++;
+			}else if(salario<1000) {
+				salarioinferior++;
+			}
+			contadorejercicio3++;
+		}
+		examen.salariosEmpleados(salariosuperior,salariomedio,salarioinferior,total);
+		
+	}
+
+}
